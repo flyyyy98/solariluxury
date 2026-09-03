@@ -1,0 +1,58 @@
+﻿{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Contact & Stores | Solariluxury{% endblock %}
+
+{% block content %}
+<div class="container py-5" style="max-width: 1100px;">
+    
+    <!-- Encabezado Limpio Estilo TRM -->
+    <div class="text-center mb-5 pb-3 border-bottom border-dark">
+        <h1 class="font-mono fw-bold text-uppercase fs-2 mb-2">CONTACT &amp; EXPERIENCE STORES ({{ total_locales }})</h1>
+        <p class="text-muted font-mono small mb-0">ATENCIÓN PRESENCIAL • RETIRO INMEDIATO EN LA SERENA • PRUEBA DE TALLAS</p>
+    </div>
+
+    <!-- Grid de Sucursales Enmarcadas -->
+    <div class="row g-4 mb-5">
+        {% for loc in locales %}
+        <div class="col-md-6">
+            <div class="border border-dark p-4 bg-white h-100 d-flex flex-column">
+                <div class="mb-3 overflow-hidden border border-dark" style="height: 240px;">
+                    <img src="{% static loc.imagen %}" alt="{{ loc.nombre }}" class="w-100 h-100" style="object-fit: cover;">
+                </div>
+                
+                <span class="badge bg-black text-white font-mono rounded-0 p-2 mb-2 d-inline-block align-self-start" style="font-size: 0.68rem;">
+                    {{ loc.badge_tipo }}
+                </span>
+                
+                <h3 class="font-mono fw-bold text-uppercase fs-4 mb-2">{{ loc.nombre }}</h3>
+                <p class="text-muted small mb-3">{{ loc.tipo_tienda }}</p>
+
+                <div class="p-3 border border-dark mb-4 bg-light font-mono small">
+                    <p class="mb-2"><strong>DIRECCIÓN:</strong> {{ loc.direccion }}</p>
+                    <p class="mb-2"><strong>HORARIO:</strong> {{ loc.horario }}</p>
+                    <p class="mb-0"><strong>TELÉFONO:</strong> {{ loc.telefono }}</p>
+                </div>
+
+                <div class="mt-auto d-flex justify-content-between align-items-center pt-3 border-top border-dark">
+                    <span class="font-mono small text-muted">{{ loc.estado }}</span>
+                    <a href="tel:{{ loc.telefono }}" class="trm-btn-boxed d-inline-block" style="width: auto; padding: 6px 18px;">
+                        CONTACTAR
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Banner Inferior de Asesoría -->
+    <div class="border border-dark p-4 text-center bg-white">
+        <h4 class="font-mono fw-bold text-uppercase fs-5 mb-2">¿TIENES DUDAS CON TU PEDIDO O TALLA?</h4>
+        <p class="text-muted font-mono small mb-3">Escríbenos directamente o visita nuestras tiendas oficiales en La Serena.</p>
+        <a href="{% url 'lista_productos' %}" class="trm-btn-boxed d-inline-block" style="width: auto; padding: 10px 28px;">
+            VOLVER AL SHOP &rarr;
+        </a>
+    </div>
+
+</div>
+{% endblock %}

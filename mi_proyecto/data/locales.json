@@ -1,0 +1,18 @@
+[
+{
+    "id": 1,
+    "nombre": "Sucursal Mall Plaza La Serena",
+    "direccion": "Av. Alberto Solari 1400, La Serena",
+    "horario": "10:00 - 20:30 hrs",
+    "telefono": "+56 9 1234 5678",
+    "imagen": "img/local1.jpg"
+},
+{
+    "id": 2,
+    "nombre": "Sucursal Centro La Serena",
+    "direccion": "Calle Balmaceda 450, La Serena",
+    "horario": "09:30 - 19:30 hrs",
+    "telefono": "+56 9 8765 4321",
+    "imagen": "img/local2.jpg"
+}
+]

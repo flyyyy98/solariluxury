@@ -1,0 +1,71 @@
+﻿{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Tienda Oficial | Solariluxury Streetwear & Calzado{% endblock %}
+
+{% block content %}
+<div class="trm-shop-layout">
+
+    <!-- 1. Sidebar de Categorías Filtrables (En móvil se convierte en barra horizontal deslizable) -->
+    <aside>
+        <ul class="trm-sidebar-categories">
+            <li>
+                <a href="{% url 'lista_productos' %}" class="{% if categoria_actual == 'TODOS' %}active{% endif %}">
+                    TODOS
+                </a>
+            </li>
+            {% for cat in categorias %}
+                {% if cat != 'TODOS' %}
+                <li>
+                    <a href="{% url 'lista_productos' %}?categoria={{ cat }}" class="{% if categoria_actual == cat %}active{% endif %}">
+                        {{ cat }}
+                    </a>
+                </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </aside>
+
+    <!-- 2. Grilla Principal de Productos Reales -->
+    <section>
+        <div class="trm-products-grid">
+            {% for prod in productos %}
+            <div class="trm-product-card" onclick="window.location.href='{% url 'detalle_producto' prod.id %}'">
+                
+                <!-- Badge de Estado (Agotado / Disponible) -->
+                {% if prod.badge_estado == 'AGOTADO' %}
+                    <span class="trm-product-badge-soldout">AGOTADO</span>
+                {% endif %}
+
+                <!-- Imagen Real del Producto sobre Fondo Blanco Puro -->
+                <div class="trm-product-img-box">
+                    <img src="{% static prod.imagen %}" alt="{{ prod.nombre }}" class="trm-product-img">
+                </div>
+
+                <!-- Botón Sólido Negro en Español -->
+                <button type="button" class="trm-btn-add-cart" onclick="event.stopPropagation(); window.location.href='{% url 'detalle_producto' prod.id %}'">
+                    {% if prod.badge_estado == 'AGOTADO' %}
+                        AGOTADO
+                    {% else %}
+                        AGREGAR AL CARRITO
+                    {% endif %}
+                </button>
+
+                <!-- Información del Producto (Nombre y Precio) -->
+                <div class="trm-product-info">
+                    <h3 class="trm-product-title">{{ prod.nombre }}</h3>
+                    <p class="trm-product-price">{{ prod.precio_formateado }} CLP</p>
+                </div>
+
+            </div>
+            {% empty %}
+            <div class="col-12 py-5 text-center font-mono">
+                <p class="text-muted mb-3">NO HAY PRODUCTOS DISPONIBLES EN ESTA CATEGORÍA.</p>
+                <a href="{% url 'lista_productos' %}" class="trm-btn-boxed d-inline-block" style="width: auto; padding: 10px 24px;">VER TODOS LOS PRODUCTOS</a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+</div>
+{% endblock %}
