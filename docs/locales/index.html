@@ -1,0 +1,267 @@
+﻿
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Stores | Solariluxury</title>
+    <!-- Librerías locales obligatorias INACAP -->
+    <link rel="stylesheet" href="/solariluxury/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/solariluxury/static/css/luxury.css">
+</head>
+<body>
+
+    <!-- 1. Marquesina Superior Oficial (Negra con GIF en movimiento continuo) -->
+    <div class="trm-marquee-bar">
+        <div class="trm-marquee-track">
+            <!-- Bloque 1 de texto y logos -->
+            <div class="trm-marquee-item">
+                <img src="/solariluxury/static/img/logo_spin.gif" alt="TRM Logo" class="trm-marquee-gif">
+                <span>SOLARILUXURY STREETWEAR &amp; SNEAKERS</span>
+            </div>
+            <div class="trm-marquee-item">
+                <img src="/solariluxury/static/img/logo_spin.gif" alt="TRM Logo" class="trm-marquee-gif">
+                <span>PREVENTAS Y DROPS EXCLUSIVOS</span>
+            </div>
+            <div class="trm-marquee-item">
+                <img src="/solariluxury/static/img/logo_spin.gif" alt="TRM Logo" class="trm-marquee-gif">
+                <span>TIENDAS OFICIALES LA SERENA</span>
+            </div>
+            <div class="trm-marquee-item">
+                <img src="/solariluxury/static/img/logo_spin.gif" alt="TRM Logo" class="trm-marquee-gif">
+                <span class="trm-arabic-text">سولاري لكجري</span>
+                <span>CALZADO 100% ORIGINAL EN CAJA</span>
+            </div>
+            <div class="trm-marquee-item">
+                <img src="/solariluxury/static/img/logo_spin.gif" alt="TRM Logo" class="trm-marquee-gif">
+                <span>ENVÍOS A TODO CHILE Y RETIRO INMEDIATO</span>
+            </div>
+            <!-- Bloque duplicado para bucle infinito continuo -->
+            <div class="trm-marquee-item">
+                <img src="/solariluxury/static/img/logo_spin.gif" alt="TRM Logo" class="trm-marquee-gif">
+                <span>SOLARILUXURY STREETWEAR &amp; SNEAKERS</span>
+            </div>
+            <div class="trm-marquee-item">
+                <img src="/solariluxury/static/img/logo_spin.gif" alt="TRM Logo" class="trm-marquee-gif">
+                <span>PREVENTAS Y DROPS EXCLUSIVOS</span>
+            </div>
+            <div class="trm-marquee-item">
+                <img src="/solariluxury/static/img/logo_spin.gif" alt="TRM Logo" class="trm-marquee-gif">
+                <span>TIENDAS OFICIALES LA SERENA</span>
+            </div>
+            <div class="trm-marquee-item">
+                <img src="/solariluxury/static/img/logo_spin.gif" alt="TRM Logo" class="trm-marquee-gif">
+                <span class="trm-arabic-text">سولاري لكجري</span>
+                <span>CALZADO 100% ORIGINAL EN CAJA</span>
+            </div>
+            <div class="trm-marquee-item">
+                <img src="/solariluxury/static/img/logo_spin.gif" alt="TRM Logo" class="trm-marquee-gif">
+                <span>ENVÍOS A TODO CHILE Y RETIRO INMEDIATO</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Navbar Principal con Logo GIF en Rotación 3D -->
+    <header class="trm-navbar">
+        <div class="trm-nav-logo-box">
+            <a href="/solariluxury/" title="Solariluxury Inicio">
+                <img src="/solariluxury/static/img/logo_spin.gif" alt="Solariluxury Logo 3D" class="trm-nav-logo-gif">
+            </a>
+        </div>
+
+        <nav>
+            <ul class="trm-nav-links" id="desktopNavLinks">
+                <li><a href="/solariluxury/productos/" class="">TIENDA</a></li>
+                <li><a href="/solariluxury/locales/" class="active">CONTACTO</a></li>
+                <li><a href="/solariluxury/productos/">LOOKBOOK</a></li>
+                <li><a href="/solariluxury/locales/informacion/" class="">ESTADO DE PREVENTA</a></li>
+                <li><a href="/solariluxury/locales/informacion/">SEGUIR PEDIDO</a></li>
+            </ul>
+        </nav>
+
+        <div class="trm-nav-icons">
+            <button class="trm-nav-icon-btn" title="Buscar Producto" onclick="toggleSearchBox()">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+            <button class="trm-nav-icon-btn" title="Mi Cuenta" onclick="alert('Acceso a membresía Solariluxury La Serena')">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            </button>
+            <button class="trm-nav-icon-btn position-relative" title="Bolsa de Compras" onclick="alert('Tu bolsa de compras actual está lista para checkout.')">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                <span class="trm-cart-badge">0</span>
+            </button>
+            <!-- Botón Menú Móvil -->
+            <button class="trm-mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Abrir Menú">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Menú Desplegable Móvil -->
+    <div id="mobileDrawerMenu" class="d-none p-3 bg-white border-bottom border-dark font-mono text-center">
+        <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+            <li><a href="/solariluxury/productos/" class="fw-bold text-dark text-uppercase">TIENDA</a></li>
+            <li><a href="/solariluxury/locales/" class="fw-bold text-dark text-uppercase">CONTACTO</a></li>
+            <li><a href="/solariluxury/productos/" class="fw-bold text-dark text-uppercase">LOOKBOOK</a></li>
+            <li><a href="/solariluxury/locales/informacion/" class="fw-bold text-dark text-uppercase">ESTADO DE PREVENTA</a></li>
+            <li><a href="/solariluxury/locales/informacion/" class="fw-bold text-dark text-uppercase">SEGUIR PEDIDO</a></li>
+        </ul>
+    </div>
+
+    <!-- 3. Reloj Digital en Tiempo Real -->
+    <div class="trm-live-clock-wrapper" id="liveTimestamp">
+        3/9/2026 12:24:58 PM
+    </div>
+
+    <!-- 4. Contenido Central Dinámico -->
+    <main>
+        
+<div class="container py-5" style="max-width: 1100px;">
+    
+    <!-- Encabezado Limpio Estilo TRM -->
+    <div class="text-center mb-5 pb-3 border-bottom border-dark">
+        <h1 class="font-mono fw-bold text-uppercase fs-2 mb-2">CONTACT &amp; EXPERIENCE STORES (2)</h1>
+        <p class="text-muted font-mono small mb-0">ATENCIÓN PRESENCIAL • RETIRO INMEDIATO EN LA SERENA • PRUEBA DE TALLAS</p>
+    </div>
+
+    <!-- Grid de Sucursales Enmarcadas -->
+    <div class="row g-4 mb-5">
+        
+        <div class="col-md-6">
+            <div class="border border-dark p-4 bg-white h-100 d-flex flex-column">
+                <div class="mb-3 overflow-hidden border border-dark" style="height: 240px;">
+                    <img src="/solariluxury/static/img/local1.jpg" alt="Sucursal Mall Plaza La Serena" class="w-100 h-100" style="object-fit: cover;">
+                </div>
+                
+                <span class="badge bg-black text-white font-mono rounded-0 p-2 mb-2 d-inline-block align-self-start" style="font-size: 0.68rem;">
+                    SOLARILUXURY FLAGSHIP
+                </span>
+                
+                <h3 class="font-mono fw-bold text-uppercase fs-4 mb-2">Sucursal Mall Plaza La Serena</h3>
+                <p class="text-muted small mb-3">Tienda Principal de Experiencia y Retiro</p>
+
+                <div class="p-3 border border-dark mb-4 bg-light font-mono small">
+                    <p class="mb-2"><strong>DIRECCIÓN:</strong> Av. Alberto Solari 1400, La Serena</p>
+                    <p class="mb-2"><strong>HORARIO:</strong> 10:00 - 20:30 hrs</p>
+                    <p class="mb-0"><strong>TELÉFONO:</strong> +56 9 1234 5678</p>
+                </div>
+
+                <div class="mt-auto d-flex justify-content-between align-items-center pt-3 border-top border-dark">
+                    <span class="font-mono small text-muted">Abierto hoy • Retiro inmediato</span>
+                    <a href="tel:+56 9 1234 5678" class="trm-btn-boxed d-inline-block" style="width: auto; padding: 6px 18px;">
+                        CONTACTAR
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="border border-dark p-4 bg-white h-100 d-flex flex-column">
+                <div class="mb-3 overflow-hidden border border-dark" style="height: 240px;">
+                    <img src="/solariluxury/static/img/local2.jpg" alt="Sucursal Centro La Serena" class="w-100 h-100" style="object-fit: cover;">
+                </div>
+                
+                <span class="badge bg-black text-white font-mono rounded-0 p-2 mb-2 d-inline-block align-self-start" style="font-size: 0.68rem;">
+                    SOLARILUXURY SHOWROOM
+                </span>
+                
+                <h3 class="font-mono fw-bold text-uppercase fs-4 mb-2">Sucursal Centro La Serena</h3>
+                <p class="text-muted small mb-3">Showroom Exclusivo y Entrega de Calzado / Streetwear</p>
+
+                <div class="p-3 border border-dark mb-4 bg-light font-mono small">
+                    <p class="mb-2"><strong>DIRECCIÓN:</strong> Calle Balmaceda 450, La Serena</p>
+                    <p class="mb-2"><strong>HORARIO:</strong> 09:30 - 19:30 hrs</p>
+                    <p class="mb-0"><strong>TELÉFONO:</strong> +56 9 8765 4321</p>
+                </div>
+
+                <div class="mt-auto d-flex justify-content-between align-items-center pt-3 border-top border-dark">
+                    <span class="font-mono small text-muted">Abierto hoy • Retiro inmediato</span>
+                    <a href="tel:+56 9 8765 4321" class="trm-btn-boxed d-inline-block" style="width: auto; padding: 6px 18px;">
+                        CONTACTAR
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Banner Inferior de Asesoría -->
+    <div class="border border-dark p-4 text-center bg-white">
+        <h4 class="font-mono fw-bold text-uppercase fs-5 mb-2">¿TIENES DUDAS CON TU PEDIDO O TALLA?</h4>
+        <p class="text-muted font-mono small mb-3">Escríbenos directamente o visita nuestras tiendas oficiales en La Serena.</p>
+        <a href="/solariluxury/productos/" class="trm-btn-boxed d-inline-block" style="width: auto; padding: 10px 28px;">
+            VOLVER AL SHOP &rarr;
+        </a>
+    </div>
+
+</div>
+
+    </main>
+
+    <!-- Footer Minimalista Oficial -->
+    <footer class="border-top border-dark py-4 text-center bg-white font-mono">
+        <div class="container">
+            <p class="mb-0 text-dark fw-bold text-uppercase" style="letter-spacing: 0.18em; font-size: 0.88rem;">SOLARILUXURY</p>
+        </div>
+    </footer>
+
+    <!-- Scripts Locales y Actualización del Reloj -->
+    <script src="/solariluxury/static/js/bootstrap.bundle.min.js"></script>
+    <script src="/solariluxury/static/js/gsap.min.js"></script>
+    <script>
+        function updateLiveClock() {
+            const now = new Date();
+            const month = now.getMonth() + 1;
+            const day = now.getDate();
+            const year = now.getFullYear();
+            
+            let hours = now.getHours();
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            
+            const clockText = `${month}/${day}/${year} ${hours}:${minutes}:${seconds} ${ampm}`;
+            const clockEl = document.getElementById('liveTimestamp');
+            if (clockEl) {
+                clockEl.textContent = clockText;
+            }
+            const gatewayClockEl = document.getElementById('gatewayClock');
+            if (gatewayClockEl) {
+                gatewayClockEl.textContent = clockText;
+            }
+        }
+        setInterval(updateLiveClock, 1000);
+        updateLiveClock();
+
+        function toggleMobileMenu() {
+            const drawer = document.getElementById('mobileDrawerMenu');
+            drawer.classList.toggle('d-none');
+        }
+
+        function toggleSearchBox() {
+            const query = prompt('Buscar zapatillas o streetwear (ej: Jordan 4, Nike TN, Hoodie):');
+            if (query) {
+                window.location.href = '/productos/';
+            }
+        }
+    </script>
+    
+</body>
+</html>

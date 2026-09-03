@@ -1,0 +1,601 @@
+﻿
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Oficial | Solariluxury Streetwear & Calzado</title>
+    <!-- Librerías locales obligatorias INACAP -->
+    <link rel="stylesheet" href="/solariluxury/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/solariluxury/static/css/luxury.css">
+</head>
+<body>
+
+    <!-- 1. Marquesina Superior Oficial (Negra con GIF en movimiento continuo) -->
+    <div class="trm-marquee-bar">
+        <div class="trm-marquee-track">
+            <!-- Bloque 1 de texto y logos -->
+            <div class="trm-marquee-item">
+                <img src="/solariluxury/static/img/logo_spin.gif" alt="TRM Logo" class="trm-marquee-gif">
+                <span>SOLARILUXURY STREETWEAR &amp; SNEAKERS</span>
+            </div>
+            <div class="trm-marquee-item">
+                <img src="/solariluxury/static/img/logo_spin.gif" alt="TRM Logo" class="trm-marquee-gif">
+                <span>PREVENTAS Y DROPS EXCLUSIVOS</span>
+            </div>
+            <div class="trm-marquee-item">
+                <img src="/solariluxury/static/img/logo_spin.gif" alt="TRM Logo" class="trm-marquee-gif">
+                <span>TIENDAS OFICIALES LA SERENA</span>
+            </div>
+            <div class="trm-marquee-item">
+                <img src="/solariluxury/static/img/logo_spin.gif" alt="TRM Logo" class="trm-marquee-gif">
+                <span class="trm-arabic-text">سولاري لكجري</span>
+                <span>CALZADO 100% ORIGINAL EN CAJA</span>
+            </div>
+            <div class="trm-marquee-item">
+                <img src="/solariluxury/static/img/logo_spin.gif" alt="TRM Logo" class="trm-marquee-gif">
+                <span>ENVÍOS A TODO CHILE Y RETIRO INMEDIATO</span>
+            </div>
+            <!-- Bloque duplicado para bucle infinito continuo -->
+            <div class="trm-marquee-item">
+                <img src="/solariluxury/static/img/logo_spin.gif" alt="TRM Logo" class="trm-marquee-gif">
+                <span>SOLARILUXURY STREETWEAR &amp; SNEAKERS</span>
+            </div>
+            <div class="trm-marquee-item">
+                <img src="/solariluxury/static/img/logo_spin.gif" alt="TRM Logo" class="trm-marquee-gif">
+                <span>PREVENTAS Y DROPS EXCLUSIVOS</span>
+            </div>
+            <div class="trm-marquee-item">
+                <img src="/solariluxury/static/img/logo_spin.gif" alt="TRM Logo" class="trm-marquee-gif">
+                <span>TIENDAS OFICIALES LA SERENA</span>
+            </div>
+            <div class="trm-marquee-item">
+                <img src="/solariluxury/static/img/logo_spin.gif" alt="TRM Logo" class="trm-marquee-gif">
+                <span class="trm-arabic-text">سولاري لكجري</span>
+                <span>CALZADO 100% ORIGINAL EN CAJA</span>
+            </div>
+            <div class="trm-marquee-item">
+                <img src="/solariluxury/static/img/logo_spin.gif" alt="TRM Logo" class="trm-marquee-gif">
+                <span>ENVÍOS A TODO CHILE Y RETIRO INMEDIATO</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Navbar Principal con Logo GIF en Rotación 3D -->
+    <header class="trm-navbar">
+        <div class="trm-nav-logo-box">
+            <a href="/solariluxury/" title="Solariluxury Inicio">
+                <img src="/solariluxury/static/img/logo_spin.gif" alt="Solariluxury Logo 3D" class="trm-nav-logo-gif">
+            </a>
+        </div>
+
+        <nav>
+            <ul class="trm-nav-links" id="desktopNavLinks">
+                <li><a href="/solariluxury/productos/" class="active">TIENDA</a></li>
+                <li><a href="/solariluxury/locales/" class="">CONTACTO</a></li>
+                <li><a href="/solariluxury/productos/">LOOKBOOK</a></li>
+                <li><a href="/solariluxury/locales/informacion/" class="">ESTADO DE PREVENTA</a></li>
+                <li><a href="/solariluxury/locales/informacion/">SEGUIR PEDIDO</a></li>
+            </ul>
+        </nav>
+
+        <div class="trm-nav-icons">
+            <button class="trm-nav-icon-btn" title="Buscar Producto" onclick="toggleSearchBox()">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+            <button class="trm-nav-icon-btn" title="Mi Cuenta" onclick="alert('Acceso a membresía Solariluxury La Serena')">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            </button>
+            <button class="trm-nav-icon-btn position-relative" title="Bolsa de Compras" onclick="alert('Tu bolsa de compras actual está lista para checkout.')">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                <span class="trm-cart-badge">0</span>
+            </button>
+            <!-- Botón Menú Móvil -->
+            <button class="trm-mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Abrir Menú">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Menú Desplegable Móvil -->
+    <div id="mobileDrawerMenu" class="d-none p-3 bg-white border-bottom border-dark font-mono text-center">
+        <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+            <li><a href="/solariluxury/productos/" class="fw-bold text-dark text-uppercase">TIENDA</a></li>
+            <li><a href="/solariluxury/locales/" class="fw-bold text-dark text-uppercase">CONTACTO</a></li>
+            <li><a href="/solariluxury/productos/" class="fw-bold text-dark text-uppercase">LOOKBOOK</a></li>
+            <li><a href="/solariluxury/locales/informacion/" class="fw-bold text-dark text-uppercase">ESTADO DE PREVENTA</a></li>
+            <li><a href="/solariluxury/locales/informacion/" class="fw-bold text-dark text-uppercase">SEGUIR PEDIDO</a></li>
+        </ul>
+    </div>
+
+    <!-- 3. Reloj Digital en Tiempo Real -->
+    <div class="trm-live-clock-wrapper" id="liveTimestamp">
+        3/9/2026 12:24:58 PM
+    </div>
+
+    <!-- 4. Contenido Central Dinámico -->
+    <main>
+        
+<div class="trm-shop-layout">
+
+    <!-- 1. Sidebar de Categorías Filtrables (En móvil se convierte en barra horizontal deslizable) -->
+    <aside>
+        <ul class="trm-sidebar-categories">
+            <li>
+                <a href="/solariluxury/productos/" class="active">
+                    TODOS
+                </a>
+            </li>
+            
+                
+            
+                
+                <li>
+                    <a href="/solariluxury/productos/?categoria=ZAPATILLAS (SNEAKERS)" class="">
+                        ZAPATILLAS (SNEAKERS)
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/solariluxury/productos/?categoria=POLERONES (HOODIES)" class="">
+                        POLERONES (HOODIES)
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/solariluxury/productos/?categoria=POLERAS" class="">
+                        POLERAS
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/solariluxury/productos/?categoria=PANTALONES FLARED" class="">
+                        PANTALONES FLARED
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/solariluxury/productos/?categoria=PASAMONTAÑAS" class="">
+                        PASAMONTAÑAS
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/solariluxury/productos/?categoria=BOLSOS Y MORRALES" class="">
+                        BOLSOS Y MORRALES
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a href="/solariluxury/productos/?categoria=ACCESORIOS" class="">
+                        ACCESORIOS
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </aside>
+
+    <!-- 2. Grilla Principal de Productos Reales -->
+    <section>
+        <div class="trm-products-grid">
+            
+            <div class="trm-product-card" onclick="window.location.href='/solariluxury/productos/1/'">
+                
+                <!-- Badge de Estado (Agotado / Disponible) -->
+                
+                    <span class="trm-product-badge-soldout">AGOTADO</span>
+                
+
+                <!-- Imagen Real del Producto sobre Fondo Blanco Puro -->
+                <div class="trm-product-img-box">
+                    <img src="/solariluxury/static/img/jordan.jpg" alt="AIR JORDAN 4 RETRO &#x27;BLACK CAT&#x27;" class="trm-product-img">
+                </div>
+
+                <!-- Botón Sólido Negro en Español -->
+                <button type="button" class="trm-btn-add-cart" onclick="event.stopPropagation(); window.location.href='/solariluxury/productos/1/'">
+                    
+                        AGOTADO
+                    
+                </button>
+
+                <!-- Información del Producto (Nombre y Precio) -->
+                <div class="trm-product-info">
+                    <h3 class="trm-product-title">AIR JORDAN 4 RETRO &#x27;BLACK CAT&#x27;</h3>
+                    <p class="trm-product-price">$189.990 CLP</p>
+                </div>
+
+            </div>
+            
+            <div class="trm-product-card" onclick="window.location.href='/solariluxury/productos/2/'">
+                
+                <!-- Badge de Estado (Agotado / Disponible) -->
+                
+                    <span class="trm-product-badge-soldout">AGOTADO</span>
+                
+
+                <!-- Imagen Real del Producto sobre Fondo Blanco Puro -->
+                <div class="trm-product-img-box">
+                    <img src="/solariluxury/static/img/jordan1_travis.jpg" alt="TRAVIS SCOTT X AIR JORDAN 1 LOW &#x27;REVERSE MOCHA&#x27;" class="trm-product-img">
+                </div>
+
+                <!-- Botón Sólido Negro en Español -->
+                <button type="button" class="trm-btn-add-cart" onclick="event.stopPropagation(); window.location.href='/solariluxury/productos/2/'">
+                    
+                        AGOTADO
+                    
+                </button>
+
+                <!-- Información del Producto (Nombre y Precio) -->
+                <div class="trm-product-info">
+                    <h3 class="trm-product-title">TRAVIS SCOTT X AIR JORDAN 1 LOW &#x27;REVERSE MOCHA&#x27;</h3>
+                    <p class="trm-product-price">$329.990 CLP</p>
+                </div>
+
+            </div>
+            
+            <div class="trm-product-card" onclick="window.location.href='/solariluxury/productos/3/'">
+                
+                <!-- Badge de Estado (Agotado / Disponible) -->
+                
+
+                <!-- Imagen Real del Producto sobre Fondo Blanco Puro -->
+                <div class="trm-product-img-box">
+                    <img src="/solariluxury/static/img/jordan1_chicago.jpg" alt="AIR JORDAN 1 HIGH OG &#x27;CHICAGO LOST &amp; FOUND&#x27;" class="trm-product-img">
+                </div>
+
+                <!-- Botón Sólido Negro en Español -->
+                <button type="button" class="trm-btn-add-cart" onclick="event.stopPropagation(); window.location.href='/solariluxury/productos/3/'">
+                    
+                        AGREGAR AL CARRITO
+                    
+                </button>
+
+                <!-- Información del Producto (Nombre y Precio) -->
+                <div class="trm-product-info">
+                    <h3 class="trm-product-title">AIR JORDAN 1 HIGH OG &#x27;CHICAGO LOST &amp; FOUND&#x27;</h3>
+                    <p class="trm-product-price">$219.990 CLP</p>
+                </div>
+
+            </div>
+            
+            <div class="trm-product-card" onclick="window.location.href='/solariluxury/productos/4/'">
+                
+                <!-- Badge de Estado (Agotado / Disponible) -->
+                
+
+                <!-- Imagen Real del Producto sobre Fondo Blanco Puro -->
+                <div class="trm-product-img-box">
+                    <img src="/solariluxury/static/img/tn.jpg" alt="NIKE AIR MAX PLUS TN &#x27;TRIPLE BLACK&#x27;" class="trm-product-img">
+                </div>
+
+                <!-- Botón Sólido Negro en Español -->
+                <button type="button" class="trm-btn-add-cart" onclick="event.stopPropagation(); window.location.href='/solariluxury/productos/4/'">
+                    
+                        AGREGAR AL CARRITO
+                    
+                </button>
+
+                <!-- Información del Producto (Nombre y Precio) -->
+                <div class="trm-product-info">
+                    <h3 class="trm-product-title">NIKE AIR MAX PLUS TN &#x27;TRIPLE BLACK&#x27;</h3>
+                    <p class="trm-product-price">$149.990 CLP</p>
+                </div>
+
+            </div>
+            
+            <div class="trm-product-card" onclick="window.location.href='/solariluxury/productos/5/'">
+                
+                <!-- Badge de Estado (Agotado / Disponible) -->
+                
+
+                <!-- Imagen Real del Producto sobre Fondo Blanco Puro -->
+                <div class="trm-product-img-box">
+                    <img src="/solariluxury/static/img/dunk_panda.jpg" alt="NIKE DUNK LOW RETRO &#x27;PANDA&#x27;" class="trm-product-img">
+                </div>
+
+                <!-- Botón Sólido Negro en Español -->
+                <button type="button" class="trm-btn-add-cart" onclick="event.stopPropagation(); window.location.href='/solariluxury/productos/5/'">
+                    
+                        AGREGAR AL CARRITO
+                    
+                </button>
+
+                <!-- Información del Producto (Nombre y Precio) -->
+                <div class="trm-product-info">
+                    <h3 class="trm-product-title">NIKE DUNK LOW RETRO &#x27;PANDA&#x27;</h3>
+                    <p class="trm-product-price">$119.990 CLP</p>
+                </div>
+
+            </div>
+            
+            <div class="trm-product-card" onclick="window.location.href='/solariluxury/productos/6/'">
+                
+                <!-- Badge de Estado (Agotado / Disponible) -->
+                
+                    <span class="trm-product-badge-soldout">AGOTADO</span>
+                
+
+                <!-- Imagen Real del Producto sobre Fondo Blanco Puro -->
+                <div class="trm-product-img-box">
+                    <img src="/solariluxury/static/img/jordan4_military.jpg" alt="AIR JORDAN 4 RETRO &#x27;MILITARY BLACK&#x27;" class="trm-product-img">
+                </div>
+
+                <!-- Botón Sólido Negro en Español -->
+                <button type="button" class="trm-btn-add-cart" onclick="event.stopPropagation(); window.location.href='/solariluxury/productos/6/'">
+                    
+                        AGOTADO
+                    
+                </button>
+
+                <!-- Información del Producto (Nombre y Precio) -->
+                <div class="trm-product-info">
+                    <h3 class="trm-product-title">AIR JORDAN 4 RETRO &#x27;MILITARY BLACK&#x27;</h3>
+                    <p class="trm-product-price">$199.990 CLP</p>
+                </div>
+
+            </div>
+            
+            <div class="trm-product-card" onclick="window.location.href='/solariluxury/productos/7/'">
+                
+                <!-- Badge de Estado (Agotado / Disponible) -->
+                
+                    <span class="trm-product-badge-soldout">AGOTADO</span>
+                
+
+                <!-- Imagen Real del Producto sobre Fondo Blanco Puro -->
+                <div class="trm-product-img-box">
+                    <img src="/solariluxury/static/img/beast_zip.jpg" alt="BEAST ZIP HOODIE" class="trm-product-img">
+                </div>
+
+                <!-- Botón Sólido Negro en Español -->
+                <button type="button" class="trm-btn-add-cart" onclick="event.stopPropagation(); window.location.href='/solariluxury/productos/7/'">
+                    
+                        AGOTADO
+                    
+                </button>
+
+                <!-- Información del Producto (Nombre y Precio) -->
+                <div class="trm-product-info">
+                    <h3 class="trm-product-title">BEAST ZIP HOODIE</h3>
+                    <p class="trm-product-price">$89.990 CLP</p>
+                </div>
+
+            </div>
+            
+            <div class="trm-product-card" onclick="window.location.href='/solariluxury/productos/8/'">
+                
+                <!-- Badge de Estado (Agotado / Disponible) -->
+                
+
+                <!-- Imagen Real del Producto sobre Fondo Blanco Puro -->
+                <div class="trm-product-img-box">
+                    <img src="/solariluxury/static/img/camo_hoodie.jpg" alt="BLACK CAMO CURB HOODIE" class="trm-product-img">
+                </div>
+
+                <!-- Botón Sólido Negro en Español -->
+                <button type="button" class="trm-btn-add-cart" onclick="event.stopPropagation(); window.location.href='/solariluxury/productos/8/'">
+                    
+                        AGREGAR AL CARRITO
+                    
+                </button>
+
+                <!-- Información del Producto (Nombre y Precio) -->
+                <div class="trm-product-info">
+                    <h3 class="trm-product-title">BLACK CAMO CURB HOODIE</h3>
+                    <p class="trm-product-price">$94.990 CLP</p>
+                </div>
+
+            </div>
+            
+            <div class="trm-product-card" onclick="window.location.href='/solariluxury/productos/9/'">
+                
+                <!-- Badge de Estado (Agotado / Disponible) -->
+                
+
+                <!-- Imagen Real del Producto sobre Fondo Blanco Puro -->
+                <div class="trm-product-img-box">
+                    <img src="/solariluxury/static/img/beast_tshirt.jpg" alt="BLACK BEAST T-SHIRT" class="trm-product-img">
+                </div>
+
+                <!-- Botón Sólido Negro en Español -->
+                <button type="button" class="trm-btn-add-cart" onclick="event.stopPropagation(); window.location.href='/solariluxury/productos/9/'">
+                    
+                        AGREGAR AL CARRITO
+                    
+                </button>
+
+                <!-- Información del Producto (Nombre y Precio) -->
+                <div class="trm-product-info">
+                    <h3 class="trm-product-title">BLACK BEAST T-SHIRT</h3>
+                    <p class="trm-product-price">$39.990 CLP</p>
+                </div>
+
+            </div>
+            
+            <div class="trm-product-card" onclick="window.location.href='/solariluxury/productos/10/'">
+                
+                <!-- Badge de Estado (Agotado / Disponible) -->
+                
+
+                <!-- Imagen Real del Producto sobre Fondo Blanco Puro -->
+                <div class="trm-product-img-box">
+                    <img src="/solariluxury/static/img/flared_pants.jpg" alt="FLARED SWEATPANTS BLACK" class="trm-product-img">
+                </div>
+
+                <!-- Botón Sólido Negro en Español -->
+                <button type="button" class="trm-btn-add-cart" onclick="event.stopPropagation(); window.location.href='/solariluxury/productos/10/'">
+                    
+                        AGREGAR AL CARRITO
+                    
+                </button>
+
+                <!-- Información del Producto (Nombre y Precio) -->
+                <div class="trm-product-info">
+                    <h3 class="trm-product-title">FLARED SWEATPANTS BLACK</h3>
+                    <p class="trm-product-price">$69.990 CLP</p>
+                </div>
+
+            </div>
+            
+            <div class="trm-product-card" onclick="window.location.href='/solariluxury/productos/11/'">
+                
+                <!-- Badge de Estado (Agotado / Disponible) -->
+                
+
+                <!-- Imagen Real del Producto sobre Fondo Blanco Puro -->
+                <div class="trm-product-img-box">
+                    <img src="/solariluxury/static/img/balaclava_black.jpg" alt="SOLARILUXURY BALACLAVA 3M" class="trm-product-img">
+                </div>
+
+                <!-- Botón Sólido Negro en Español -->
+                <button type="button" class="trm-btn-add-cart" onclick="event.stopPropagation(); window.location.href='/solariluxury/productos/11/'">
+                    
+                        AGREGAR AL CARRITO
+                    
+                </button>
+
+                <!-- Información del Producto (Nombre y Precio) -->
+                <div class="trm-product-info">
+                    <h3 class="trm-product-title">SOLARILUXURY BALACLAVA 3M</h3>
+                    <p class="trm-product-price">$29.990 CLP</p>
+                </div>
+
+            </div>
+            
+            <div class="trm-product-card" onclick="window.location.href='/solariluxury/productos/12/'">
+                
+                <!-- Badge de Estado (Agotado / Disponible) -->
+                
+
+                <!-- Imagen Real del Producto sobre Fondo Blanco Puro -->
+                <div class="trm-product-img-box">
+                    <img src="/solariluxury/static/img/bag_trapstar.jpg" alt="CROSSBODY BAG TACTICAL" class="trm-product-img">
+                </div>
+
+                <!-- Botón Sólido Negro en Español -->
+                <button type="button" class="trm-btn-add-cart" onclick="event.stopPropagation(); window.location.href='/solariluxury/productos/12/'">
+                    
+                        AGREGAR AL CARRITO
+                    
+                </button>
+
+                <!-- Información del Producto (Nombre y Precio) -->
+                <div class="trm-product-info">
+                    <h3 class="trm-product-title">CROSSBODY BAG TACTICAL</h3>
+                    <p class="trm-product-price">$44.990 CLP</p>
+                </div>
+
+            </div>
+            
+            <div class="trm-product-card" onclick="window.location.href='/solariluxury/productos/13/'">
+                
+                <!-- Badge de Estado (Agotado / Disponible) -->
+                
+
+                <!-- Imagen Real del Producto sobre Fondo Blanco Puro -->
+                <div class="trm-product-img-box">
+                    <img src="/solariluxury/static/img/pouch_accessory.jpg" alt="UTILITY NECK POUCH" class="trm-product-img">
+                </div>
+
+                <!-- Botón Sólido Negro en Español -->
+                <button type="button" class="trm-btn-add-cart" onclick="event.stopPropagation(); window.location.href='/solariluxury/productos/13/'">
+                    
+                        AGREGAR AL CARRITO
+                    
+                </button>
+
+                <!-- Información del Producto (Nombre y Precio) -->
+                <div class="trm-product-info">
+                    <h3 class="trm-product-title">UTILITY NECK POUCH</h3>
+                    <p class="trm-product-price">$24.990 CLP</p>
+                </div>
+
+            </div>
+            
+        </div>
+    </section>
+
+</div>
+
+    </main>
+
+    <!-- Footer Minimalista Oficial -->
+    <footer class="border-top border-dark py-4 text-center bg-white font-mono">
+        <div class="container">
+            <p class="mb-0 text-dark fw-bold text-uppercase" style="letter-spacing: 0.18em; font-size: 0.88rem;">SOLARILUXURY</p>
+        </div>
+    </footer>
+
+    <!-- Scripts Locales y Actualización del Reloj -->
+    <script src="/solariluxury/static/js/bootstrap.bundle.min.js"></script>
+    <script src="/solariluxury/static/js/gsap.min.js"></script>
+    <script>
+        function updateLiveClock() {
+            const now = new Date();
+            const month = now.getMonth() + 1;
+            const day = now.getDate();
+            const year = now.getFullYear();
+            
+            let hours = now.getHours();
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            
+            const clockText = `${month}/${day}/${year} ${hours}:${minutes}:${seconds} ${ampm}`;
+            const clockEl = document.getElementById('liveTimestamp');
+            if (clockEl) {
+                clockEl.textContent = clockText;
+            }
+            const gatewayClockEl = document.getElementById('gatewayClock');
+            if (gatewayClockEl) {
+                gatewayClockEl.textContent = clockText;
+            }
+        }
+        setInterval(updateLiveClock, 1000);
+        updateLiveClock();
+
+        function toggleMobileMenu() {
+            const drawer = document.getElementById('mobileDrawerMenu');
+            drawer.classList.toggle('d-none');
+        }
+
+        function toggleSearchBox() {
+            const query = prompt('Buscar zapatillas o streetwear (ej: Jordan 4, Nike TN, Hoodie):');
+            if (query) {
+                window.location.href = '/productos/';
+            }
+        }
+    </script>
+    
+</body>
+</html>
