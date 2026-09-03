@@ -1,4 +1,4 @@
-﻿__pycache__/
+__pycache__/
 *.py[cod]
 *$py.class
 *.sqlite3
@@ -9,3 +9,8 @@ venv/
 .vscode/
 .idea/
 *.log
+*.docx
+*.pdf
+*.xlsx
+evidencias_ia/
+.temp*
