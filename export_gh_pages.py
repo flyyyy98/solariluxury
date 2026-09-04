@@ -1,4 +1,4 @@
-﻿import os
+import os
 import sys
 import shutil
 
@@ -49,6 +49,8 @@ for route, out_path in routes:
         html = html.replace('href="/locales/', f'href="{REPO_PREFIX}/locales/')
         html = html.replace('href="/"', f'href="{REPO_PREFIX}/"')
         html = html.replace("window.location.href='/productos/", f"window.location.href='{REPO_PREFIX}/productos/")
+        html = html.replace("window.location.href = '/productos/'", f"window.location.href = '{REPO_PREFIX}/productos/'")
+        html = html.replace("window.location.href='/productos/'", f"window.location.href='{REPO_PREFIX}/productos/'")
         
         with open(out_path, "w", encoding="utf-8") as f:
             f.write(html)
