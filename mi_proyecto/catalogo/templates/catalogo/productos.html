@@ -1,4 +1,4 @@
-﻿{% extends "base.html" %}
+{% extends "base.html" %}
 {% load static %}
 
 {% block title %}Tienda Oficial | Solariluxury Streetwear & Calzado{% endblock %}
@@ -7,7 +7,7 @@
 <div class="trm-shop-layout">
 
     <!-- 1. Sidebar de Categorías Filtrables (En móvil se convierte en barra horizontal deslizable) -->
-    <aside>
+    <aside class="trm-sidebar-wrapper">
         <ul class="trm-sidebar-categories">
             <li>
                 <a href="{% url 'lista_productos' %}" class="{% if categoria_actual == 'TODOS' %}active{% endif %}">

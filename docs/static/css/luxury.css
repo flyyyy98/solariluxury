@@ -1,5 +1,5 @@
-﻿/* =========================================================
-   SOLARILUXURY — TRM PREMIUM STOREFRONT THEME (RESPONSIVE & SPANISH)
+/* =========================================================
+   SOLARILUXURY — TRM PREMIUM STOREFRONT THEME (RESPONSIVE & MOBILE-FIRST)
    Estética oficial https://premiumdemo2.myshopify.com/
    Theme by TRAPICMOTION / Streetwear Y2K Underground
    Paleta: Blanco Puro #FFFFFF | Negro Puro #000000 | Bordes 1px solid #000
@@ -16,21 +16,37 @@
     --border-light: #E0E0E0;
     --font-main: "Helvetica Neue", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
     --font-mono: "Courier New", Courier, monospace;
+    --header-height: 60px;
+    --marquee-height: 38px;
 }
 
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    -webkit-tap-highlight-color: transparent;
 }
 
-html, body {
+html {
+    scroll-behavior: smooth;
+}
+
+body {
     background-color: var(--bg-white);
     color: var(--text-black);
     font-family: var(--font-main);
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    width: 100%;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+    width: 100%;
 }
 
 img {
@@ -42,11 +58,17 @@ img {
 a {
     color: inherit;
     text-decoration: none;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease, transform 0.15s ease;
 }
 
-a:hover {
-    opacity: 0.75;
+@media (hover: hover) {
+    a:hover {
+        opacity: 0.75;
+    }
+}
+
+a:active, button:active {
+    transform: scale(0.98);
 }
 
 /* =========================================================
@@ -55,7 +77,7 @@ a:hover {
 .trm-marquee-bar {
     background-color: var(--bg-dark);
     color: var(--text-white);
-    height: 40px;
+    height: var(--marquee-height);
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -63,35 +85,37 @@ a:hover {
     position: relative;
     z-index: 100;
     border-bottom: 1px solid var(--bg-dark);
+    user-select: none;
 }
 
 .trm-marquee-track {
     display: flex;
     align-items: center;
-    animation: trmScrollMarquee 28s linear infinite;
-    gap: 32px;
+    animation: trmScrollMarquee 26s linear infinite;
+    gap: 28px;
     padding-left: 10px;
 }
 
 .trm-marquee-item {
     display: inline-flex;
     align-items: center;
-    gap: 14px;
-    font-size: 0.75rem;
+    gap: 12px;
+    font-size: 0.72rem;
     font-weight: 800;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
+    flex-shrink: 0;
 }
 
 .trm-marquee-gif {
-    height: 22px;
+    height: 18px;
     width: auto;
     display: inline-block;
     vertical-align: middle;
 }
 
 .trm-arabic-text {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     letter-spacing: 0;
     font-weight: bold;
     color: #FFFFFF;
@@ -107,18 +131,21 @@ a:hover {
 }
 
 /* =========================================================
-   2. NAVBAR BLANCO MINIMALISTA
+   2. NAVBAR BLANCO MINIMALISTA CON MENÚ DESPLEGABLE
    ========================================================= */
 .trm-navbar {
-    background-color: var(--bg-white);
-    padding: 16px 36px;
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 12px 32px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: sticky;
     top: 0;
-    z-index: 90;
-    border-bottom: 1px solid rgba(0,0,0,0.08);
+    z-index: 990;
+    border-bottom: 1px solid var(--border-black);
+    width: 100%;
 }
 
 .trm-nav-logo-box {
@@ -127,7 +154,7 @@ a:hover {
 }
 
 .trm-nav-logo-gif {
-    height: 50px;
+    height: 46px;
     width: auto;
     cursor: pointer;
     transition: transform 0.2s ease;
@@ -140,8 +167,10 @@ a:hover {
 .trm-nav-links {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 28px;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .trm-nav-links li a {
@@ -163,7 +192,7 @@ a:hover {
 .trm-nav-icons {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 12px;
 }
 
 .trm-nav-icon-btn {
@@ -175,16 +204,23 @@ a:hover {
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 4px;
+    width: 38px;
+    height: 38px;
+    border-radius: 4px;
+    transition: background-color 0.15s ease;
+}
+
+.trm-nav-icon-btn:hover {
+    background-color: rgba(0,0,0,0.05);
 }
 
 .trm-cart-badge {
     position: absolute;
-    top: -4px;
-    right: -6px;
+    top: 2px;
+    right: 2px;
     background-color: var(--bg-dark);
     color: var(--text-white);
-    font-size: 0.6rem;
+    font-size: 0.58rem;
     font-weight: bold;
     border-radius: 50%;
     width: 16px;
@@ -200,18 +236,92 @@ a:hover {
     border: none;
     color: var(--text-black);
     cursor: pointer;
-    padding: 4px;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    position: relative;
+}
+
+/* Menú Desplegable Móvil (Drawer) */
+.trm-mobile-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #FFFFFF;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 20px 40px;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.trm-mobile-drawer.active {
+    transform: translateX(0);
+}
+
+.trm-drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-black);
+    margin-bottom: 24px;
+}
+
+.trm-drawer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 30px;
+    padding: 0;
+}
+
+.trm-drawer-links li a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    font-size: 0.95rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-black);
+    border: 1px solid var(--border-black);
+    background-color: var(--bg-white);
+    transition: all 0.15s ease;
+}
+
+.trm-drawer-links li a:active,
+.trm-drawer-links li a.active {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+}
+
+.trm-drawer-footer {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-light);
 }
 
 /* Reloj Digital en Vivo */
 .trm-live-clock-wrapper {
     text-align: center;
-    padding: 14px 0 10px;
+    padding: 10px 16px;
     font-family: var(--font-mono);
-    font-size: 0.78rem;
+    font-size: 0.74rem;
     font-weight: 700;
     color: var(--text-black);
     letter-spacing: 0.05em;
+    background-color: #fafafa;
+    border-bottom: 1px solid var(--border-light);
 }
 
 /* =========================================================
@@ -219,18 +329,19 @@ a:hover {
    ========================================================= */
 .trm-gateway-container {
     min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 40px 20px;
+    padding: 30px 20px;
     background-color: var(--bg-white);
 }
 
 .trm-gateway-logo-gif {
-    height: 115px;
+    height: 110px;
     width: auto;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     filter: drop-shadow(0 4px 12px rgba(0,0,0,0.06));
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -242,11 +353,12 @@ a:hover {
 
 .trm-gateway-clock {
     font-family: var(--font-mono);
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.05em;
-    margin-bottom: 36px;
+    margin-bottom: 30px;
     color: var(--text-black);
+    text-align: center;
 }
 
 .trm-gateway-menu {
@@ -254,41 +366,52 @@ a:hover {
     flex-direction: column;
     gap: 12px;
     width: 100%;
-    max-width: 330px;
-    margin-bottom: 48px;
+    max-width: 340px;
+    margin-bottom: 36px;
 }
 
 .trm-btn-boxed {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
+    min-height: 46px;
     padding: 12px 20px;
     border: 1px solid var(--border-black);
     background-color: var(--bg-white);
     color: var(--text-black);
     font-size: 0.82rem;
     font-weight: 800;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     text-align: center;
     cursor: pointer;
     transition: all 0.2s ease;
 }
 
-.trm-btn-boxed:hover {
-    background-color: var(--bg-dark);
-    color: var(--text-white);
-    opacity: 1;
+@media (hover: hover) {
+    .trm-btn-boxed:hover {
+        background-color: var(--bg-dark);
+        color: var(--text-white);
+        opacity: 1;
+    }
 }
 
 .trm-social-row {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 22px;
+    gap: 20px;
 }
 
 .trm-social-icon {
     color: var(--text-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
@@ -303,20 +426,27 @@ a:hover {
 .trm-shop-layout {
     max-width: 1360px;
     margin: 0 auto;
-    padding: 24px 36px 80px;
+    padding: 24px 32px 80px;
     display: grid;
-    grid-template-columns: 240px 1fr;
-    gap: 40px;
+    grid-template-columns: 220px 1fr;
+    gap: 36px;
+    width: 100%;
+}
+
+.trm-sidebar-wrapper {
+    width: 100%;
 }
 
 .trm-sidebar-categories {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    padding-top: 12px;
+    gap: 14px;
+    padding-top: 6px;
     position: sticky;
-    top: 100px;
+    top: 90px;
+    margin: 0;
+    padding-left: 0;
 }
 
 .trm-sidebar-categories li a {
@@ -340,7 +470,8 @@ a:hover {
 .trm-products-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 36px 24px;
+    gap: 32px 20px;
+    width: 100%;
 }
 
 .trm-product-card {
@@ -349,18 +480,20 @@ a:hover {
     flex-direction: column;
     position: relative;
     cursor: pointer;
+    border: 1px solid transparent;
+    transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .trm-product-badge-soldout {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 8px;
+    left: 8px;
     border: 1px solid var(--border-black);
     background-color: var(--bg-white);
     color: var(--text-black);
-    font-size: 0.65rem;
-    font-weight: 800;
-    padding: 4px 8px;
+    font-size: 0.62rem;
+    font-weight: 900;
+    padding: 3px 6px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     z-index: 5;
@@ -369,11 +502,12 @@ a:hover {
 .trm-product-img-box {
     width: 100%;
     aspect-ratio: 1 / 1;
-    background-color: var(--bg-white);
+    background-color: #FAFAFA;
+    border: 1px solid #EAEAEA;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 16px;
+    padding: 12px;
     overflow: hidden;
     position: relative;
 }
@@ -382,51 +516,65 @@ a:hover {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    transition: transform 0.4s ease;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.trm-product-card:hover .trm-product-img {
-    transform: scale(1.06);
+@media (hover: hover) {
+    .trm-product-card:hover .trm-product-img {
+        transform: scale(1.06);
+    }
 }
 
 .trm-btn-add-cart {
     width: 100%;
-    padding: 12px 16px;
+    min-height: 42px;
+    padding: 10px 12px;
     background-color: var(--bg-dark);
     color: var(--text-white);
     border: 1px solid var(--border-black);
-    font-size: 0.78rem;
+    font-size: 0.74rem;
     font-weight: 800;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     text-align: center;
     cursor: pointer;
     margin-top: 8px;
-    margin-bottom: 12px;
-    transition: all 0.2s ease;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
 }
 
-.trm-btn-add-cart:hover {
-    background-color: var(--bg-white);
-    color: var(--text-black);
+@media (hover: hover) {
+    .trm-btn-add-cart:hover {
+        background-color: var(--bg-white);
+        color: var(--text-black);
+    }
 }
 
 .trm-product-info {
     text-align: center;
+    padding: 0 4px;
 }
 
 .trm-product-title {
-    font-size: 0.84rem;
+    font-size: 0.8rem;
     font-weight: 800;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
     margin-bottom: 4px;
     color: var(--text-black);
     line-height: 1.3;
+    min-height: 2.6em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .trm-product-price {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     font-weight: 700;
     color: var(--text-black);
     font-family: var(--font-mono);
@@ -438,10 +586,11 @@ a:hover {
 .trm-detail-layout {
     max-width: 1240px;
     margin: 0 auto;
-    padding: 32px 36px 80px;
+    padding: 32px 32px 80px;
     display: grid;
-    grid-template-columns: 100px 1.2fr 1fr;
-    gap: 36px;
+    grid-template-columns: 90px 1.2fr 1fr;
+    gap: 32px;
+    width: 100%;
 }
 
 .trm-thumbs-col {
@@ -458,6 +607,7 @@ a:hover {
     overflow: hidden;
     background: #fff;
     transition: transform 0.2s;
+    width: 100%;
 }
 
 .trm-thumb-item:hover {
@@ -471,16 +621,18 @@ a:hover {
 }
 
 .trm-main-img-box {
-    background-color: var(--bg-white);
+    background-color: #FAFAFA;
+    border: 1px solid #EAEAEA;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
+    min-height: 380px;
 }
 
 .trm-main-img-box img {
-    max-height: 520px;
-    width: auto;
+    max-height: 480px;
+    width: 100%;
     object-fit: contain;
 }
 
@@ -490,7 +642,7 @@ a:hover {
 }
 
 .trm-detail-title {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 900;
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -501,7 +653,9 @@ a:hover {
 .trm-detail-price-row {
     display: flex;
     align-items: center;
-    gap: 14px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
     margin-bottom: 4px;
 }
 
@@ -517,7 +671,7 @@ a:hover {
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--text-muted);
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 .trm-size-label {
@@ -532,7 +686,7 @@ a:hover {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
 }
 
 .trm-size-btn {
@@ -541,9 +695,9 @@ a:hover {
     color: var(--text-black);
     font-size: 0.8rem;
     font-weight: 800;
-    padding: 8px 16px;
+    padding: 10px 16px;
     cursor: pointer;
-    min-width: 44px;
+    min-width: 48px;
     text-align: center;
     transition: all 0.15s ease;
 }
@@ -562,25 +716,31 @@ a:hover {
     text-decoration: underline;
     margin-bottom: 20px;
     display: inline-block;
+    cursor: pointer;
 }
 
 .trm-btn-soldout-lg {
     width: 100%;
+    min-height: 48px;
     padding: 14px;
     border: 1px solid var(--border-light);
     background-color: var(--bg-white);
     color: var(--text-muted);
     font-size: 0.85rem;
     font-weight: 800;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 10px;
     cursor: not-allowed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .trm-btn-paypal {
     width: 100%;
+    min-height: 46px;
     padding: 12px;
     background-color: #FFC439;
     border: 1px solid #E0AC28;
@@ -589,29 +749,41 @@ a:hover {
     font-weight: 800;
     text-align: center;
     border-radius: 4px;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
 }
 
 .trm-prev-next-row {
     display: flex;
     gap: 8px;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
+    width: 100%;
 }
 
 .trm-btn-nav-arrow {
-    padding: 6px 14px;
+    flex: 1;
+    text-align: center;
+    padding: 10px 14px;
     border: 1px solid var(--border-black);
     background-color: var(--bg-white);
     font-size: 0.75rem;
     font-weight: 800;
     letter-spacing: 0.06em;
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.trm-btn-nav-arrow:hover {
-    background-color: var(--bg-dark);
-    color: var(--text-white);
+@media (hover: hover) {
+    .trm-btn-nav-arrow:hover {
+        background-color: var(--bg-dark);
+        color: var(--text-white);
+    }
 }
 
 .trm-specs-list {
@@ -625,82 +797,247 @@ a:hover {
 }
 
 /* =========================================================
-   6. RESPONSIVE Y ADAPTATIVIDAD (MOBILE & TABLET)
+   6. RESPONSIVE Y ADAPTATIVIDAD PROFESIONAL (TABLETS & SMARTPHONES)
    ========================================================= */
-@media (max-width: 992px) {
+
+/* --- TABLETS & PANTALLAS MEDIANAS (< 992px) --- */
+@media (max-width: 991px) {
     .trm-navbar {
-        padding: 14px 20px;
+        padding: 10px 18px;
     }
+    .trm-nav-links {
+        display: none !important;
+    }
+    .trm-mobile-menu-btn {
+        display: flex;
+    }
+    
     .trm-shop-layout {
         grid-template-columns: 1fr;
-        padding: 16px 20px 60px;
-        gap: 24px;
+        padding: 14px 18px 60px;
+        gap: 20px;
     }
     .trm-sidebar-categories {
         position: static;
         flex-direction: row;
         overflow-x: auto;
-        padding-bottom: 12px;
+        padding: 4px 0 10px;
         border-bottom: 1px solid var(--border-light);
-        gap: 12px;
+        gap: 8px;
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    .trm-sidebar-categories::-webkit-scrollbar {
+        display: none;
+    }
+    .trm-sidebar-categories li {
+        flex-shrink: 0;
     }
     .trm-sidebar-categories li a {
-        padding: 6px 12px;
+        padding: 8px 14px;
         border: 1px solid var(--border-black);
         font-size: 0.72rem;
+        background: #fff;
     }
     .trm-sidebar-categories li a.active {
         background-color: var(--bg-dark);
         color: var(--text-white);
         text-decoration: none;
+        transform: none;
     }
+    
     .trm-products-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 24px 16px;
+        gap: 20px 14px;
     }
+    
     .trm-detail-layout {
         grid-template-columns: 1fr;
-        padding: 20px 20px 60px;
-        gap: 24px;
+        padding: 16px 18px 60px;
+        gap: 20px;
     }
     .trm-thumbs-col {
         flex-direction: row;
         order: 2;
         justify-content: center;
+        gap: 10px;
     }
     .trm-thumb-item {
-        width: 70px;
-        height: 70px;
+        width: 64px;
+        height: 64px;
     }
     .trm-main-img-box {
         order: 1;
-        padding: 10px;
+        padding: 12px;
+        min-height: 300px;
     }
     .trm-detail-info {
         order: 3;
     }
 }
 
+/* --- TELÉFONOS SMARTPHONES (< 600px) --- */
 @media (max-width: 600px) {
+    :root {
+        --marquee-height: 34px;
+    }
+    
+    .trm-marquee-item {
+        font-size: 0.65rem;
+        gap: 8px;
+    }
+    .trm-marquee-gif {
+        height: 15px;
+    }
+    .trm-arabic-text {
+        font-size: 0.8rem;
+    }
+    
     .trm-navbar {
-        padding: 12px 14px;
+        padding: 8px 14px;
     }
-    .trm-nav-links {
-        display: none;
+    .trm-nav-logo-gif {
+        height: 38px;
     }
-    .trm-mobile-menu-btn {
-        display: block;
+    .trm-nav-icons {
+        gap: 6px;
     }
+    .trm-nav-icon-btn {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .trm-gateway-container {
+        padding: 24px 16px;
+    }
+    .trm-gateway-logo-gif {
+        height: 85px;
+        margin-bottom: 16px;
+    }
+    .trm-gateway-clock {
+        font-size: 0.74rem;
+        margin-bottom: 24px;
+    }
+    .trm-gateway-menu {
+        max-width: 320px;
+        gap: 10px;
+        margin-bottom: 28px;
+    }
+    .trm-btn-boxed {
+        font-size: 0.76rem;
+        min-height: 44px;
+        padding: 10px 14px;
+    }
+    
+    .trm-shop-layout {
+        padding: 10px 12px 50px;
+        gap: 14px;
+    }
+    
+    /* Grilla de 2 columnas optimizada para móviles */
     .trm-products-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px 10px;
     }
-    .trm-detail-title {
-        font-size: 1.3rem;
+    .trm-product-card {
+        border-bottom: 1px solid #F0F0F0;
+        padding-bottom: 10px;
+    }
+    .trm-product-img-box {
+        padding: 8px;
+    }
+    .trm-product-badge-soldout {
+        font-size: 0.55rem;
+        padding: 2px 4px;
+        top: 5px;
+        left: 5px;
+    }
+    .trm-btn-add-cart {
+        min-height: 36px;
+        padding: 8px 4px;
+        font-size: 0.66rem;
+        letter-spacing: 0.02em;
+        margin-top: 6px;
+        margin-bottom: 6px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .trm-product-title {
+        font-size: 0.72rem;
+        line-height: 1.25;
+        min-height: 2.5em;
+        margin-bottom: 2px;
+    }
+    .trm-product-price {
+        font-size: 0.72rem;
+    }
+    
+    /* Detalle de producto */
+    .trm-detail-layout {
+        padding: 12px 14px 50px;
+        gap: 16px;
+    }
+    .trm-main-img-box {
+        min-height: 250px;
+        max-height: 300px;
+        padding: 8px;
     }
     .trm-main-img-box img {
-        max-height: 320px;
+        max-height: 260px;
+    }
+    .trm-thumb-item {
+        width: 52px;
+        height: 52px;
+    }
+    .trm-detail-title {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+    .trm-detail-price {
+        font-size: 1rem;
+    }
+    .trm-size-btn {
+        flex: 1 1 calc(25% - 8px);
+        min-width: 44px;
+        padding: 8px 4px;
+        font-size: 0.75rem;
+    }
+    .trm-btn-add-cart.py-3 {
+        padding: 13px !important;
+        font-size: 0.76rem !important;
+    }
+    .trm-btn-soldout-lg {
+        font-size: 0.76rem;
+        padding: 12px;
+    }
+    .trm-btn-paypal {
+        font-size: 0.8rem;
+        padding: 11px;
+    }
+    .trm-specs-list {
+        font-size: 0.72rem;
+        line-height: 1.6;
+        padding-left: 16px;
     }
 }
+
+/* --- TELÉFONOS MUY PEQUEÑOS (< 360px) --- */
+@media (max-width: 359px) {
+    .trm-products-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .trm-btn-add-cart {
+        font-size: 0.74rem;
+        padding: 10px;
+    }
+    .trm-product-title {
+        font-size: 0.8rem;
+    }
+    .trm-product-price {
+        font-size: 0.8rem;
+    }
+}
+
